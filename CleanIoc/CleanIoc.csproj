@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BadConfigurationException.cs" />
-    <Compile Include="Builder\ContainerBuilder - Copy.cs" />
     <Compile Include="Builder\ContainerBuilder.cs" />
     <Compile Include="Builder\ContainerBuilderExtensions.cs" />
     <Compile Include="Builder\IContainerFactory.cs" />
