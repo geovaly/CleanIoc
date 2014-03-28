@@ -2,8 +2,8 @@ CleanIoc
 ========
 
 ```C#
-	[Test]
-        public void Resolve_RegisterTypeWithImplementation_ReturnsAnInstanceOfImplementationType()
+      [Test]
+      public void Resolve_RegisterTypeWithImplementation_ReturnsAnInstanceOfImplementationType()
         {
             IContainer container = new ContainerBuilder()
                 .RegisterType<IService, ServiceImpl>()
