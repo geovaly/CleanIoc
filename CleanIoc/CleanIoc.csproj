@@ -39,7 +39,119 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BadConfigurationException.cs" />
+    <Compile Include="Builder\ContainerBuilder - Copy.cs" />
+    <Compile Include="Builder\ContainerBuilder.cs" />
+    <Compile Include="Builder\ContainerBuilderExtensions.cs" />
+    <Compile Include="Builder\IContainerFactory.cs" />
+    <Compile Include="Builder\Impl\DelegateRegistrationFactoryPerLifestyle.cs" />
+    <Compile Include="Builder\Impl\ReflectionRegistrationFactoryPerLifestyle.cs" />
+    <Compile Include="Builder\Impl\RegistrationFactory.cs" />
+    <Compile Include="Builder\IRegistrationFactory.cs" />
+    <Compile Include="Builder\IRegistrationFactoryPerLifestyle.cs" />
+    <Compile Include="Builder\Lifestyle.cs" />
+    <Compile Include="Builder\Lifestyles\SingletonLifestyle.cs" />
+    <Compile Include="Builder\Lifestyles\SingletonPerScopeLifestyle.cs" />
+    <Compile Include="Builder\Lifestyles\TransientLifestyle.cs" />
+    <Compile Include="Builder\Lifestyles\TransientPerScopeLifestyle.cs" />
+    <Compile Include="Compiler\DefaultLambdaCompiler.cs" />
+    <Compile Include="Compiler\DynamicAssemblyLambdaCompiler.cs" />
+    <Compile Include="CompositeRoot\BuilderParam.cs" />
+    <Compile Include="CompositeRoot\BuilderParamProvider.cs" />
+    <Compile Include="CompositeRoot\DefaultBuilderParamProvider.cs" />
+    <Compile Include="CompositeRoot\DynamicAssemblyBuilderParamProvider.cs" />
+    <Compile Include="CompositeRoot\HighPerformanceBuilderParamProvider.cs" />
+    <Compile Include="Core\Container.cs" />
+    <Compile Include="Core\Disposer.cs" />
+    <Compile Include="Core\IInstanceLookupFinder.cs" />
+    <Compile Include="Core\InstanceLookup.cs" />
+    <Compile Include="Core\ITagDetailsFinder.cs" />
+    <Compile Include="Core\LifetimeScope.cs" />
+    <Compile Include="Core\TagDetails.cs" />
+    <Compile Include="ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Expressions\IInstanceExpressionFinder.cs" />
+    <Compile Include="Expressions\ILambdaCompiler.cs" />
+    <Compile Include="Expressions\Impl\Builders\FuncInstanceExpressionsBuilder.cs" />
+    <Compile Include="Expressions\Impl\Builders\LazyInstanceExpressionsBuilder.cs" />
+    <Compile Include="Expressions\Impl\IInstanceExpressionsBuilder.cs" />
+    <Compile Include="Expressions\Impl\InstanceExpressionFinderFactory.cs" />
+    <Compile Include="Expressions\Impl\InstanceExpressionFinderWrapper.cs" />
+    <Compile Include="Expressions\Impl\PopulateInstanceExpressions.cs" />
+    <Compile Include="Expressions\InstanceExpression.cs" />
+    <Compile Include="Expressions\InstanceExpressionCompiler.cs" />
+    <Compile Include="Expressions\InstanceExpressionFactory.cs" />
+    <Compile Include="Expressions\Parameters.cs" />
+    <Compile Include="Expressions\VariableExpression.cs" />
+    <Compile Include="Factory\ContainerFactory.cs" />
+    <Compile Include="Factory\IConstantsBuilder.cs" />
+    <Compile Include="Factory\IInstanceLookupsBuilder.cs" />
+    <Compile Include="Factory\Impl\Constants\ContainerConstantsBuilder.cs" />
+    <Compile Include="Factory\Impl\Constants\DefaultConstantsBuilder.cs" />
+    <Compile Include="Factory\Impl\DictionaryTagDetailsBuilder.cs" />
+    <Compile Include="Factory\Impl\InstanceLookups\Base\DictionaryInstanceLookupFinder.cs" />
+    <Compile Include="Factory\Impl\InstanceLookups\Base\LazyInstanceLookupBuilder.cs" />
+    <Compile Include="Factory\Impl\InstanceLookups\DictionaryInstanceLookupsBuilder.cs" />
+    <Compile Include="Factory\Impl\InstanceLookups\HighPerformanceInstanceLookupsBuilder.cs" />
+    <Compile Include="Factory\ITagDetailsBuilder.cs" />
+    <Compile Include="Factory\SingletonsInitializer.cs" />
+    <Compile Include="Factory\TagsInitializer.cs" />
+    <Compile Include="IContainer.cs" />
+    <Compile Include="ILifetimeScope.cs" />
+    <Compile Include="Policy\IConstructorSelectorPolicy.cs" />
+    <Compile Include="Policy\Impl\SingleConstructorSelectorPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrations\CompositeRegistration.cs" />
+    <Compile Include="Registrations\IConstant.cs" />
+    <Compile Include="Registrations\IConstantFactory.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\GroupByServiceTypeContainerFactory.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\IGroupingRegistrationFactory.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\Impl\DictionaryGroupingRegistration.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\Impl\DictionaryGroupingRegistrationFactory.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\Impl\GroupingRegistration.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\ITagRegistration.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\NullConstantsFactory.cs" />
+    <Compile Include="Registrations\Impl\GroupByServiceType\ServiceTypeGrouping.cs" />
+    <Compile Include="Registrations\Impl\LifetimeScopeExtensions.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\BaseSingletonPerScopeRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\BaseSingletonRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\BaseTransientRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\BaseTransientDelegateRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\SingletonPerScopeRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\SingletonRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\TransientPerScopeRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\TransientRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\Util\DisposableInstanceLookup.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Delegate\Util\TypeExtensions.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\InitSingletonRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\InitTagsRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Others\InstanceRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Others\LifetimeScopeRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Others\ScopeStateRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Reflection\InstanceFactory.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Reflection\SingletonPerScopeRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Reflection\SingletonRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Reflection\TransientPerScopeRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\Reflection\TransientRegistration.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\ScopeExpressionsUtil.cs" />
+    <Compile Include="Registrations\Impl\TagRegistrations\SingletonExpressionsUtil.cs" />
+    <Compile Include="Registrations\IRegistration.cs" />
+    <Compile Include="Registrations\IRegistrationVisitor.cs" />
+    <Compile Include="Registrations\ISingletonsInitializer.cs" />
+    <Compile Include="Registrations\ITagsInitializer.cs" />
+    <Compile Include="Utility\BaseBuilder.cs" />
+    <Compile Include="Utility\Extensions.cs" />
+    <Compile Include="Utility\ReflectionHelpers.cs" />
+    <Compile Include="Utility\TypeComparer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
