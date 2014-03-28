@@ -1,6 +1,8 @@
 CleanIoc
 ========
 
+CleanIoc is a dependency injection framework that aims for simplicity and clean code.
+
 ```C#
 [Test]
 public void Resolve_RegisterTypeWithImplementation_ReturnsAnInstanceOfImplementationType()
